@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіт з лабораторної роботи №1</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Центруем заголовок и имя студента */
+        .header {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        /* Левый текст для "Лабораторна робота №1" в виде ссылки */
+        .left-align {
+            text-align: left;
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+
+        /* Стили для сегментов */
+        .segment {
+            margin-top: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* Стили для фотографии студента */
+        .student-photo-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: center;
+        }
+
+        .student-photo {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .student-photo-caption {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Стили для сегментов с ссылками и таблицами */
+        .html-code {
+            font-family: monospace;
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 3px solid #ccc;
+        }
+
+        /* Стили для изображения пылесоса */
+        .vacuum-photo {
+            width: 150px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Заголовок и информация о студенте по центру, но сверху -->
+    <div class="header">
+        <h1>Звіт з лабораторних робіт з дисципліни "Інтернет-технології та проєктування WEB-застосувань"</h1>
+        <p>Студент групи ІС-34 Шайдецький Данило Вікторович</p>
+    </div>
+
+    <!-- Левый текст для лабораторной работы в виде ссылки -->
+    <div class="left-align">
+        <a href="doc.html">Лабораторна робота №1</a>
+    </div>
+
+    <!-- Сегмент 1: Опис предметного середовища -->
+    <div class="segment">
+        <p><strong>Опис предметного середовища:</strong></p>
+        <p>HTML-документ на персональному комп'ютері</p>
+    </div>
+
+    <!-- Сегмент 2: Тема, мета та місце розташування -->
+    <div class="segment">
+        <p><strong>Тема:</strong> СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ.<br>
+        РОБОТА З ПОСИЛАННЯМИ, ТАБЛИЦЯМИ, ЗОБРАЖЕННЯМИ, СПИСКАМИ в HTML-ДОКУМЕНТІ.</p>
+        <p><strong>Мета:</strong> Придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями, списками, формами.</p>
+        <p><strong>Розташування лаби №1:</strong> Персональний комп'ютер.</p>
+    </div>
+
+    <div class="segment">
+        <p><strong>1 Ссылка на Google Таблицы:</strong></p>
+        <a href="https://docs.google.com/spreadsheets/d/17S9Vlde8vuH7AQ8MiKdE87nWYAU43x_A059je1LClXo/edit?gid=0#gid=0" target="_blank">
+            Посилання на таблицю
+        </a>
+        <p><strong>Код HTML-таблиці:</strong></p>
+        <div class="html-code">
+            &lt;table&gt;<br>
+            &nbsp;&nbsp;&lt;tr&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Назва&lt;/th&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Значення&lt;/th&gt;<br>
+            &nbsp;&nbsp;&lt;/tr&gt;<br>
+            &nbsp;&nbsp;&lt;tr&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Приклад&lt;/td&gt;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;123&lt;/td&gt;<br>
+            &nbsp;&nbsp;&lt;/tr&gt;<br>
+            &lt;/table&gt;
+        </div>
+
+        <p><strong>2) HTML-код форми:</strong></p>
+        <div class="html-code">
+            &lt;form&gt;<br>
+            &nbsp;&nbsp;&lt;label for="name"&gt;Ваше ім'я:&lt;/label&gt;<br>
+            &nbsp;&nbsp;&lt;input type="text" id="name" name="name"&gt;<br><br>
+            &nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt;<br>
+            &nbsp;&nbsp;&lt;input type="email" id="email" name="email"&gt;<br><br>
+            &nbsp;&nbsp;&lt;input type="submit" value="Надіслати"&gt;<br>
+            &lt;/form&gt;
+        </div>
+
+        <p><strong>3) Зображення пилососа:</strong></p>
+        <img src="vacuum.jpg" alt="Пилосос" class="vacuum-photo">
+        <p><strong>HTML-код зображення:</strong></p>
+        <div class="html-code">
+            &lt;img src="vacuum.jpg" alt="Пилосос" class="vacuum-photo"&gt;
+        </div>
+    </div>
+
+    <div class="student-photo-container">
+        <img src="student.jpg" alt="Фото студента" class="student-photo">
+        <p class="student-photo-caption">Фото студента</p>
+    </div>
+
+</body>
+</html>
