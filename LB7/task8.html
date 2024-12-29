@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання №8</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-form label {
+            margin-bottom: 10px;
+        }
+
+        .login-form button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form class="login-form">
+        <label>
+            Email
+            <input type="email" name="email" />
+        </label>
+        <br>
+        <label>
+            Password
+            <input type="password" name="password" />
+        </label>
+        <br>
+        <button type="submit">Log in</button>
+    </form>
+
+    <script>
+        document.querySelector('.login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const formElements = event.target.elements;
+            const email = formElements.email.value.trim();
+            const password = formElements.password.value.trim();
+
+            if (!email || !password) {
+                alert('All form fields must be filled in');
+                return;
+            }
+
+            const formData = {
+                email: email,
+                password: password
+            };
+
+            console.log(formData);
+
+            event.target.reset();
+        });
+    </script>
+</body>
+</html>

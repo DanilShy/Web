@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оренда нерухомості</title>
+    
+    <link rel="icon" type="" href="./images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column; 
+        }
+
+        #header {
+            background-color: #3498db;
+            color: white;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            margin-right: 20px;
+        }
+
+        .title-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        #header h1 {
+            margin: 0;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-left {
+            margin-left: 20px;
+        }
+
+        .nav-right {
+            margin-right: 20px;
+        }
+
+        .nav-button {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .property-form {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 5px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #property-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px;
+            flex-grow: 1; 
+        }
+
+        .property-item {
+            background-color: white;
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .property-item h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .favorite-btn {
+            margin-top: 10px;
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <div class="nav-left">
+            <button class="nav-button">Кабінет орендатора</button>
+            <button class="nav-button">Мої заявки на оренду</button>
+        </div>
+        <div class="title-logo">
+            <img src="images/company_logo.png" alt="Логотип компанії" class="logo"> 
+            <h1>Весела квартирка</h1>
+        </div>
+        <div class="nav-right">
+            <button class="nav-button">Увійти</button>
+            <button class="nav-button">Зареєструватися</button>
+        </div>
+    </div>
+
+    <h2 style="text-align:center; margin-top: 30px;">Доступні об'єкти нерухомості</h2>
+    <ul id="property-list">
+        <li class="property-item">
+            <h3>Квартира на вул. Шевченка</h3>
+            <img src="flat1.jpg" alt="Фото квартири">
+            <p>Ціна: 10,000 грн/місяць</p>
+            <p>Опис: Простора квартира з гарним видом.</p>
+            <button class="favorite-btn">Додати до обраного</button>
+        </li>
+        <li class="property-item">
+            <h3>Будинок на вул. Франка</h3>
+            <img src="house1.jpg" alt="Фото будинку">
+            <p>Ціна: 25,000 грн/місяць</p>
+            <p>Опис: Затишний будинок у центрі міста.</p>
+            <button class="favorite-btn">Додати до обраного</button>
+        </li>
+        <li class="property-item">
+            <h3>Будинок на вул. Лесі Українки</h3>
+            <img src="house2.jpg" alt="Фото будинку">
+            <p>Ціна: 20,000 грн/місяць</p>
+            <p>Опис: Затишний будинок з великим садом.</p>
+            <button class="favorite-btn">Додати до обраного</button>
+        </li>
+        <li class="property-item">
+            <h3>Квартира на проспекті Незалежності</h3>
+            <img src="flat2.jpg" alt="Фото квартири">
+            <p>Ціна: 15,000 грн/місяць</p>
+            <p>Опис: Світла квартира з балконом.</p>
+            <button class="favorite-btn">Додати до обраного</button>
+        </li>
+        <li class="property-item">
+            <h3>Будинок на вул. Кобилянської</h3>
+            <img src="house3.jpg" alt="Фото будинку">
+            <p>Ціна: 30,000 грн/місяць</п>
+            <п>Опис: Просторий будинок з гаражем.</п>
+            <button class="favorite-btn">Додати до обраного</button>
+        </li>
+        <li class="property-item">
+            <h3>Квартира на вул. Сковороди</h3>
+            <img src="flat3.jpg" alt="Фото квартири">
+            <p>Ціна: 12,000 грн/місяць</p>
+            <p>Опис: Комфортна квартира у тихому районі.</p>
+            <button class="favorite-btn">Додати до обраного</button>
+        </li>
+        <li class="property-item">
+            <h3>Будинок на вул. Івана Франка</h3>
+            <img src="house4.jpg" alt="Фото будинку">
+            <p>Ціна: 35,000 грн/місяць</p>
+            <p>Опис: Елітний будинок з чудовим видом.</p>
+            <button class="favorite-btn">Додати до обраного</button>
+        </li>
+        <li class="property-item">
+            <h3>Квартира на вул. Мазепи</h3>
+            <img src="flat4.jpg" alt="Фото квартири">
+            <p>Ціна: 14,000 грн/місяць</п>
+            <п>Опис: Сучасна квартира з новими меблями.</п>
+            <button class="favorite-btn">Додати до обраного</button>
+        </li>
+    </ul>
+
+    <footer>
+        &copy; 2024 Оренда нерухомості
+    </footer>
+
+</body>
+</html>

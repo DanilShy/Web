@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання №2</title>
+    <style>
+        body {
+            background-color: lightgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-weight: bold;
+        }
+        .swap-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        input {
+            border: 1px solid #ccc;
+            border-radius: 0;
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            width: 150px;
+        }
+        button {
+            border: none;
+            border-radius: 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: darkgreen;
+            color: white;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: green;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Завдання №2</h1>
+        <div class="swap-container">
+            <button id="swapButton">SWAP ME</button>
+            <input type="text" id="input1" placeholder="Input 1">
+            <input type="text" id="input2" placeholder="Input 2">
+        </div>
+        <div class="output">
+            <span id="output1"></span>
+            <span id="output2"></span>
+        </div>
+    </div>
+
+    <script>
+        const swapButton = document.getElementById('swapButton');
+        const input1 = document.getElementById('input1');
+        const input2 = document.getElementById('input2');
+
+        swapButton.addEventListener('click', () => {
+            const temp = input1.value;
+            input1.value = input2.value;
+            input2.value = temp;
+        });
+
+        input1.addEventListener('input', updateOutput);
+        input2.addEventListener('input', updateOutput);
+
+        function updateOutput() {
+            document.getElementById('output1').textContent = `Input 1: ${input1.value}`;
+            document.getElementById('output2').textContent = ` Input 2: ${input2.value}`;
+        }
+    </script>
+</body>
+</html>

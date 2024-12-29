@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з лабораторних робіт</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 1.5em;
+        }
+        .left-panel {
+            flex: 1;
+            max-width: 200px;
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+            margin-top: 140px;
+        }
+        .left-panel button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .main-panel {
+            flex: 3;
+            min-width: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-panel .top-buttons {
+            display: flex;
+            justify-content: start;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .main-panel .top-buttons button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .main-panel .student-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .main-panel .student-info .info {
+            flex: 1;
+            text-align: center;
+        }
+        .main-panel .student-info .photo {
+            text-align: center;
+        }
+        .main-panel .student-info img {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+            border: 1px solid #000;
+        }
+        .main-panel .scrollable-area {
+            flex: 1;
+            border: 1px solid #000;
+            padding: 250px;
+            overflow-y: auto;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ З ДИСЦИПЛІНИ «ІНТЕРНЕТ-ТЕХНОЛОГІЇ та ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ»</h1>
+        </div>
+        <div class="left-panel" id="left-panel">
+        </div>
+        <div class="main-panel">
+            <div class="student-info">
+                <div class="info">
+                    <div>Студент групи ІС-34</div>
+                    <div>Шайдецький Данило Вікторович</div>
+                </div>
+                <div class="photo">
+                    <img src="images/student.jpg" alt="Фото Студента"><br>
+                    <div>Фото студента</div>
+                </div>
+            </div>
+            <div class="top-buttons">
+                <button onclick="loadLab('lab1')">Лабораторна робота №1</button>
+                <button onclick="loadLab('lab2')">Лабораторна робота №2</button>
+                <button onclick="loadLab('lab3')">Лабораторна робота №3</button>
+                <button onclick="loadLab('lab4')">Лабораторна робота №4</button>
+                <button onclick="loadLab('lab5')">Лабораторна робота №5</button>
+                <button onclick="loadLab('lab6')">Лабораторна робота №6</button>
+                <button onclick="loadLab('lab7')">Лабораторна робота №7</button>
+                <button onclick="loadLab('lab8')">Лабораторна робота №8</button>
+                <button onclick="loadLab('lab9')">Лабораторна робота №9</button>
+            </div>
+            <div class="scrollable-area" id="content-area">
+                Місце виведення інформації
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentLab = '';
+
+        function loadLab(lab) {
+            currentLab = lab;
+            document.getElementById('content-area').innerHTML = 'Місце виведення інформації';
+
+            const leftPanel = document.getElementById('left-panel');
+            leftPanel.innerHTML = '';
+
+            if (lab === 'lab1') {
+                leftPanel.innerHTML = `
+                    <button onclick="loadContent('description')">Опис предметного середовища</button>
+                    <button onclick="loadContent('topic-goal-location')">Тема Мета Місце розташування лабораторної роботи</button>
+                    <button onclick="loadContent('document-structure')">Структура документа</button>
+                    <button onclick="loadContent('conclusion')">Висновок</button>
+                `;
+            } else if (lab === 'lab2') {
+                leftPanel.innerHTML = `
+                    <button onclick="loadContent('topic-goal-location')">Тема, мета ЛР №2 Місце розташування сайту, інші</button>
+                    <button onclick="loadContent('style-connection-methods')">Способи підключення стилів</button>
+                    <button onclick="loadContent('selectors')">СЕЛЕКТОРИ</button>
+                    <button onclick="loadContent('css-basics')">CSS: Шрифти, текст, таблиці, фон, контур, списки, CSS просунуті</button>
+                    <button onclick="loadContent('conclusion')">Висновки до ЛР №2</button>
+                `;
+            } else if (lab === 'lab3') {
+                leftPanel.innerHTML = `
+                    <button onclick="loadContent('topic-goal-location')">Тема Мета</button>
+                    <button onclick="loadContent('task1')">Завдання №1</button>
+                    <button onclick="loadContent('task2')">Завдання №2</button>
+                    <button onclick="loadContent('task3')">Завдання №3</button>
+                    <button onclick="loadContent('conclusion')">Висновки до ЛР №3</button>
+                `;
+            }  else if (lab === 'lab4') {
+                leftPanel.innerHTML = `
+                    <button onclick="loadContent('topic-goal-location')">Тема Мета</button>
+                    <button onclick="loadContent('adapt-desktop')">Десктопна адаптивна верстка</button>
+                    <button onclick="loadContent('adapt-phone')">Телефонна адаптивна верстка</button>
+                    <button onclick="loadContent('adapt-tablet')">Планшетна таблична верстка</button>
+                    <button onclick="loadContent('conclusion')">Висновки до ЛР №4</button>
+                `;
+            }
+                else if (lab === 'lab5') {
+                leftPanel.innerHTML = `
+                    <button onclick="loadContent('topic-goal-location')">Тема Мета</button>
+                    <button onclick="loadContent('task1')">Завдання №1</button>
+                    <button onclick="loadContent('task2')">Завдання №2</button>
+                    <button onclick="loadContent('task3')">Завдання №3</button>
+                    <button onclick="loadContent('task4')">Завдання №4</button>
+                    <button onclick="loadContent('task5')">Завдання №5</button>
+                    <button onclick="loadContent('conclusion')">Висновки до ЛР №5</button>
+                `;
+            }
+                else if (lab === 'lab6') {
+                leftPanel.innerHTML = `
+                    <button onclick="loadContent('topic-goal-location')">Тема Мета</button>
+                    <button onclick="loadContent('task2')">Завдання №2</button>
+                    <button onclick="loadContent('task4')">Завдання №4</button>
+                    <button onclick="loadContent('task6')">Завдання №6</button>
+                    <button onclick="loadContent('task8')">Завдання №8</button>
+                    <button onclick="loadContent('task9')">Завдання №9</button>
+                    <button onclick="loadContent('task10')">Завдання №10</button>
+                    <button onclick="loadContent('conclusion')">Висновки до ЛР №6</button>
+                `;
+            }
+                else if (lab === 'lab7') {
+                leftPanel.innerHTML = `
+                    <button onclick="loadContent('topic-goal-location')">Тема Мета</button>
+                    <button onclick="loadContent('task2')">Завдання №2</button>
+                    <button onclick="loadContent('task4')">Завдання №4</button>
+                    <button onclick="loadContent('task6')">Завдання №6</button>
+                    <button onclick="loadContent('task8')">Завдання №8</button>
+                    <button onclick="loadContent('task9')">Завдання №9</button>
+                    <button onclick="loadContent('task10')">Завдання №10</button>
+                    <button onclick="loadContent('conclusion')">Висновки до ЛР №7</button>
+                `;
+            }
+                else if (lab === 'lab8') {
+                leftPanel.innerHTML = `
+                    <button onclick="loadContent('topic-goal-location')">Тема Мета</button>
+                    <button onclick="loadContent('task1')">Завдання №1</button>
+                    <button onclick="loadContent('task2')">Завдання №2</button>
+                    <button onclick="loadContent('conclusion')">Висновки до ЛР №8</button>
+                `;
+            }    
+            
+        }
+
+        function loadContent(content) {
+            if (!currentLab) {
+                alert('Будь ласка, спочатку виберіть лабораторну роботу.');
+                return;
+            }
+
+            fetch(`${currentLab}/content.html`, { mode: 'cors' })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('File not found');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, 'text/html');
+                    const contentElement = doc.getElementById(content);
+                    if (contentElement) {
+                        document.getElementById('content-area').innerHTML = contentElement.innerHTML;
+                    } else {
+                        document.getElementById('content-area').innerHTML = 'Контент не знайдено';
+                    }
+                })
+                .catch(error => {
+                    console.error('Помилка завантаження контенту:', error);
+                    document.getElementById('content-area').innerHTML = 'Помилка завантаження контенту: ' + error.message;
+                });
+        }
+    </script>
+</body>
+</html>

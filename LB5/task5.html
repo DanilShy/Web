@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker with Notes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #notes {
+            margin-top: 20px;
+        }
+        .note {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Date Picker with Notes</h1>
+    <input type="text" id="datePicker" placeholder="Select a date">
+    <div id="noteInput" style="display: none;">
+        <textarea id="noteText" rows="4" cols="50" placeholder="Enter your note here..."></textarea>
+        <br>
+        <button onclick="saveNote()">Save Note</button>
+        <button onclick="cancelNote()">Cancel</button>
+    </div>
+    <div id="notes"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        const datePicker = document.getElementById('datePicker');
+        const noteInput = document.getElementById('noteInput');
+        const noteText = document.getElementById('noteText');
+        const notesContainer = document.getElementById('notes');
+
+        let selectedDate = '';
+
+        flatpickr(datePicker, {
+            onChange: function(selectedDates, dateStr, instance) {
+                selectedDate = dateStr;
+                noteText.value = '';
+                noteInput.style.display = 'block';
+            }
+        });
+
+        function saveNote() {
+            const note = noteText.value.trim();
+            if (note) {
+                const noteElement = document.createElement('div');
+                noteElement.classList.add('note');
+                noteElement.innerHTML = `<strong>${selectedDate}</strong>: ${note}`;
+                notesContainer.appendChild(noteElement);
+                noteText.value = '';
+                noteInput.style.display = 'none';
+            }
+        }
+
+        function cancelNote() {
+            noteText.value = '';
+            noteInput.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

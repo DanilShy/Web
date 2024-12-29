@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання №4</title>
+    <style>
+        body {
+            background-color: lightgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-weight: bold;
+        }
+        .square {
+            width: 150px;
+            height: 150px;
+            border: 3px dashed red;
+            margin: 20px auto;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+        }
+        button:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Завдання №4</h1>
+        <div class="square" id="square"></div>
+        <div class="buttons">
+            <button id="decrease">Зменшити</button>
+            <button id="increase">Збільшити</button>
+        </div>
+    </div>
+
+    <script>
+        const square = document.getElementById('square');
+        const decreaseButton = document.getElementById('decrease');
+        const increaseButton = document.getElementById('increase');
+
+        const sizes = [60, 75, 90]; 
+        let currentSizeIndex = 1; 
+
+        function updateSquareSize() {
+            square.style.width = `${sizes[currentSizeIndex]}px`;
+            square.style.height = `${sizes[currentSizeIndex]}px`;
+        }
+
+        decreaseButton.addEventListener('click', () => {
+            if (currentSizeIndex > 0) {
+                currentSizeIndex--;
+                updateSquareSize();
+            }
+        });
+
+        increaseButton.addEventListener('click', () => {
+            if (currentSizeIndex < sizes.length - 1) {
+                currentSizeIndex++;
+                updateSquareSize();
+            }
+        });
+
+        updateSquareSize();
+    </script>
+</body>
+</html>
